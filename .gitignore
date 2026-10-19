@@ -1,0 +1,13 @@
+# Ignore folder for GameMaker
+.DS_Store
+*.log
+# GameMaker temp files
+project.lock
+cache/
+# Compiled outputs
+debug/ 
+build/ 
+# Exported files
+*.gm14
+*.yyz
+*.yyn
