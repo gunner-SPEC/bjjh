@@ -1,0 +1,13 @@
+Room file guidance: rm_forest_trail
+
+Create a new room named rm_forest_trail with resolution 2048x1024.
+Layers:
+- Background: place a tiled background using spr_ground (tile mode)
+- Instances: place objects as follows:
+  - obj_ground: fill the room with one instance at 0,0 (obj_ground Draw tiles across room)
+  - obj_bike: at x=100, y=500
+  - obj_camera: at x=100, y=500
+  - obj_ui, obj_custom_ui, obj_upgrade_ui placed at any visible location
+  - obj_ramp: place several at x=400,y=520; x=680,y=480; x=1100,y=540
+
+Notes: adjust coordinates to create a winding trail. Use multiple obj_ramp instances to create jump sequences. For best performance, use backgrounds for far scenery and keep object counts reasonable.

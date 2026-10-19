@@ -1,0 +1,7 @@
+Room file guidance: rm_urban_rooftop
+
+Create a new room named rm_urban_rooftop with resolution 2048x2048.
+- Use obj_ground and create platform objects (use tile backgrounds or obj_ground variants)
+- Place many obj_ramp objects to launch between rooftops
+- Place obj_bike at central starting rooftop
+- Include decorative sprites (trees, train) as desired

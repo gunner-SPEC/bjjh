@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- spr_ramp.svg - simple ramp placeholder -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="64" viewBox="0 0 128 64">
+  <polygon points="0,64 96,64 128,16 32,16" fill="#8b5a2b" />
+  <rect x="0" y="60" width="128" height="4" fill="#654321" />
+</svg>

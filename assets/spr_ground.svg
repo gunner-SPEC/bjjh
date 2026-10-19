@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- spr_ground.svg - simple tiling ground placeholder -->
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="128" viewBox="0 0 256 128">
+  <rect width="256" height="128" fill="#6b8e23"/>
+  <rect x="0" y="96" width="256" height="32" fill="#556b2f"/>
+</svg>

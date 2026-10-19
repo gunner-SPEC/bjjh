@@ -1,0 +1,11 @@
+Room file guidance: rm_mountain_downhill
+
+Create a new room named rm_mountain_downhill with resolution 1024x4096 (tall vertical track).
+Layers and placements:
+- obj_ground covering the room
+- Place narrow path of ramps along the vertical axis at various y positions to simulate downhill
+- Start obj_bike at top: x=400, y=128
+- Place obj_camera and UI objects
+- Add obj_ramp and obj_rock obstacles along the path
+
+Tip: use small room sections and connect them with ramps to simulate downhill flow.

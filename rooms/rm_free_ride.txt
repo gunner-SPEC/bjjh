@@ -1,0 +1,6 @@
+Free-ride room guidance: rm_free_ride
+
+Create rm_free_ride sized 4096x4096 for open-world testing.
+- Fill with obj_ground and scatter obj_ramp, obj_bush, obj_tree for landmarks
+- Place obj_bike in the center and ensure the obj_camera is active
+- For performance, use background layers and limit the number of active instances
