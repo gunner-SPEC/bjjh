@@ -1,0 +1,10 @@
+# GameMaker ignores
+.DS_Store
+*.log
+project.lock
+cache/
+debug/
+build/
+*.gm14
+*.yyz
+*.yyn
