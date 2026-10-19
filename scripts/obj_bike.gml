@@ -1,13 +1,16 @@
 // scripts/obj_bike.gml
 // --- Create Event ---
 // Paste into obj_bike Create event
-/// Load config and default bike
 include("config/game_config.gml");
 include("data/bikes.gml");
 include("data/upgrades.gml");
 
 // active bike selection (start with balanced)
 active_bike = bike_balanced;
+
+// visual customization
+paint_color = c_white; // default color - can be changed by customization UI
+outfit_id = 0; // placeholder for outfit selection
 
 // Apply active bike base stats
 speed = 0;
@@ -64,7 +67,7 @@ throttle_input = 0;
 // Paste into obj_bike Step event
 if (!instance_exists(obj_ui)) {
     // Ensure UI exists in room
-    instance_create_layer(0,0,"Instances", obj_ui);
+    instance_create_layer(16,16,"Instances", obj_ui);
 }
 
 // Read inputs (customize to your mapping)
@@ -104,7 +107,6 @@ if (jump_pressed && grounded) {
 }
 
 // Vertical physics & pseudo-suspension
-// We simulate ground as z==config_ground_clearance. Use collision with obj_ground for more accurate terrain.
 var target_z = config_ground_clearance; // if you'd like terrain height sampling, replace this
 // spring-damper towards target_z
 var spring = suspension_stiffness * (target_z - z);
@@ -135,7 +137,6 @@ x = clamp(x, 8, room_width - 8);
 y = clamp(y, 8, room_height - 8);
 
 // --- Draw Event ---
-// Paste into obj_bike Draw event
 // Draw ground shadow (optional)
 var shadow_y = y; // offset shadow at ground position
 draw_set_alpha(0.35);
@@ -144,12 +145,13 @@ draw_circle(x, shadow_y, 8, false);
 draw_set_alpha(1);
 
 // Draw bike sprite at x,y - z to simulate vertical lift
-// Replace spr_bike with your sprite name
+// Use paint_color tint if present
+var tint = (is_undefined(paint_color) ? c_white : paint_color);
 if (sprite_exists(spr_bike)) {
-    draw_sprite_ext(spr_bike, 0, x, y - z, 1, 1, image_angle + wheelie_pitch, c_white, 1);
+    draw_sprite_ext(spr_bike, 0, x, y - z, 1, 1, image_angle + wheelie_pitch, tint, 1);
 } else {
     // fallback: simple rectangle for placeholder
-    draw_set_color(c_aqua);
+    draw_set_color(tint);
     draw_rectangle(x-12, y-8 - z, x+12, y+8 - z, false);
     draw_set_color(c_white);
 }
